@@ -1,0 +1,26 @@
+@if (dataLoaded == false) {
+<div class="spinner-border" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+}
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <td>ProductId</td>
+      <td>ProductName</td>
+      <td>CategoryName</td>
+      <td>UnitPrice</td>
+      <td>UnitsInStock</td>
+    </tr>
+  </thead>
+  @for (product of products; track $index) {
+  <tr>
+    <td>{{ product.productId }}</td>
+    <td>{{ product.productName }}</td>
+    <td>{{ product.categoryId }}</td>
+    <td>{{ product.unitPrice }}</td>
+    <td>{{ product.unitsInStock }}</td>
+  </tr>
+  }
+</table>
