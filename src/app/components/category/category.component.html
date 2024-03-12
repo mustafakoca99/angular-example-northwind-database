@@ -1,5 +1,11 @@
 <ul class="list-group mt-4">
-  <li [class]="getAllCategoryClass()" (click)="setAllCategory()" routerLink="/products">Tüm Ürünler</li>
+  <li
+    [class]="getAllCategoryClass()"
+    (click)="setAllCategory()"
+    routerLink="/products"
+  >
+    Tüm Ürünler
+  </li>
   @for (category of categories; track $index) {
   <li
     (click)="setCurrentCategory(category)"
@@ -12,5 +18,5 @@
 </ul>
 
 <!-- @if (currentCategory) {
-  <h5>{{currentCategory.categoryName}} seçildi.</h5>
+  <h5>{{currentCategory.categoryName}}.</h5>
 } -->

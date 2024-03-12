@@ -4,6 +4,20 @@
 </div>
 }
 
+<div class="mb-3">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control mt-4"
+    id="filterText"
+    placeholder="Ürün Arama İfadesi Giriniz"
+  />
+</div>
+
+@if (filterText) {
+<div class="alert alert-success">{{ filterText }} aradınız...</div>
+}
+
 <table class="table mt-4">
   <thead>
     <tr>
@@ -11,6 +25,7 @@
       <td>ProductName</td>
       <td>CategoryName</td>
       <td>UnitPrice</td>
+      <td>VatPrice</td>
       <td>UnitsInStock</td>
     </tr>
   </thead>
@@ -19,7 +34,8 @@
     <td>{{ product.productId }}</td>
     <td>{{ product.productName }}</td>
     <td>{{ product.categoryId }}</td>
-    <td>{{ product.unitPrice }}</td>
+    <td>{{ product.unitPrice | currency }}</td>
+    <td>{{ product.unitPrice | vatAdded : 18 | currency }}</td>
     <td>{{ product.unitsInStock }}</td>
   </tr>
   }
