@@ -29,7 +29,7 @@
       <td>UnitsInStock</td>
     </tr>
   </thead>
-  @for (product of products; track $index) {
+  @for (product of products | filterPipe:filterText; track $index) {
   <tr>
     <td>{{ product.productId }}</td>
     <td>{{ product.productName }}</td>
