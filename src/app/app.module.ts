@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NaviComponent } from './components/navi/navi.component';
+
 import { HttpClientModule } from '@angular/common/http';
+
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -18,17 +27,19 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     CategoryComponent,
     NaviComponent,
     VatAddedPipe,
-    FilterPipePipe
+    FilterPipePipe,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+    }),
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
