@@ -19,6 +19,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { TcmbUsdTlPipe } from './pipes/tcmb-usd-tl.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
     NaviComponent,
     VatAddedPipe,
     FilterPipePipe,
+    TcmbUsdTlPipe,
   ],
   imports: [
     BrowserModule,

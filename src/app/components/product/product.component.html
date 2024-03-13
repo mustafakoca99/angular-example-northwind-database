@@ -21,11 +21,12 @@
 <table class="table mt-4">
   <thead>
     <tr>
-      <th>ProductId</th>
+      <!-- <th>ProductId</th> -->
       <th>ProductName</th>
-      <th>CategoryName</th>
-      <th>UnitPrice</th>
+      <th>CategoryId</th>
+      <th>UsdUnitPrice</th>
       <th>VatPrice</th>
+      <th>TlPrice</th>
       <th>UnitsInStock</th>
       <th></th>
     </tr>
@@ -33,14 +34,26 @@
   <tbody>
     @for (product of products | filterPipe:filterText; track $index) {
     <tr>
-      <td>{{ product.productId }}</td>
+      <!-- <td>{{ product.productId }}</td> -->
       <td>{{ product.productName }}</td>
       <td>{{ product.categoryId }}</td>
-      <td>{{ product.unitPrice | currency }}</td>
-      <td>{{ product.unitPrice | vatAdded : 18 | currency }}</td>
+      <td class="bg-success text-white">{{ product.unitPrice | currency }}</td>
+      <td class="bg-danger text-white">
+        {{ product.unitPrice | vatAdded : 18 | currency }}
+      </td>
+      <td class="bg-secondary text-white">
+        {{ product.unitPrice | tcmbUsdTl | currency : "₺" }}
+      </td>
+      <!--normal şartlarda backendden bu bilginin gelmesi lazım bizim sadece burda göstermemiz lazım.-->
       <td>{{ product.unitsInStock }}</td>
       <td>
-        <button (click)="addToCart(product)" type="button" class="btn btn-success">Sepete Ekle</button>
+        <button
+          (click)="addToCart(product)"
+          type="button"
+          class="btn btn-success"
+        >
+          Sepete Ekle
+        </button>
       </td>
     </tr>
     }
