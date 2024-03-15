@@ -20,6 +20,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { TcmbUsdTlPipe } from './pipes/tcmb-usd-tl.pipe';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TcmbUsdTlPipe } from './pipes/tcmb-usd-tl.pipe';
     VatAddedPipe,
     FilterPipePipe,
     TcmbUsdTlPipe,
+    CartSummaryComponent,
   ],
   imports: [
     BrowserModule,

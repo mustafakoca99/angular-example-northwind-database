@@ -1,0 +1,21 @@
+@if (cartItems) {
+<li class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Sepet
+  </a>
+  <ul class="dropdown-menu">
+    @for (item of cartItems; track $index) {
+    <li>
+      <a class="dropdown-item" href="#">{{ item.product.productName }}</a>
+    </li>
+    }
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item">sepete git</a></li>
+  </ul>
+</li>
+}
