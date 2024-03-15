@@ -1,4 +1,4 @@
-@if (cartItems) {
+@if (cartItems.length > 0) {
 <li class="nav-item dropdown">
   <a
     class="nav-link dropdown-toggle"
@@ -11,11 +11,15 @@
   <ul class="dropdown-menu">
     @for (item of cartItems; track $index) {
     <li>
-      <a class="dropdown-item" href="#">{{ item.product.productName }}</a>
+      <a class="dropdown-item">
+        <span class="badge text-bg-secondary">{{ item.quantity }}</span>
+        {{ item.product.productName }}
+        <span (click)="removeFromCart(item.product)" class="badge text-bg-secondary custom-cursor-pointer">Sil</span>
+      </a>
     </li>
     }
     <li><hr class="dropdown-divider" /></li>
-    <li><a class="dropdown-item">sepete git</a></li>
+    <li><a class="dropdown-item">Sepete Git</a></li>
   </ul>
 </li>
 }

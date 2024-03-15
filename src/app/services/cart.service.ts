@@ -21,6 +21,11 @@ export class CartService {
     }
   }
 
+  removeFromCart(product: Product){
+    let item: CartItem = cartItems.find((x) => x.product.productId === product.productId);
+    cartItems.splice(cartItems.indexOf(item), 1);
+  }
+
   list(): CartItem[] {
     return cartItems;
   }
