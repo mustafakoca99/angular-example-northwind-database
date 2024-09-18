@@ -9,7 +9,7 @@ import { Category } from '../models/category';
 })
 export class CategoryService {
 
-  apiUrl: string = 'https://localhost:44348/api/categories/getall'; //http://localhost:4200/api/categories/getall
+  apiUrl: string = 'https://localhost:*****/api/categories/getall'; //***** olan yere port numaranızı yazınız
 
   constructor(private httpClient: HttpClient) { }
 
