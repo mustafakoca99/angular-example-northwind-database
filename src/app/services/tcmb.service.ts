@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TcmbService {
-  apiUrl: string = 'https://localhost:44348/api/'; //http://localhost:4200/api/tcmb/getdollar
+  apiUrl: string = 'https://localhost:*****/api/'; //***** olan yere kendi port numaranızı yazınız
 
   constructor(private httpClient: HttpClient) {}
 
