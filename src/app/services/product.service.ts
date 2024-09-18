@@ -8,7 +8,7 @@ import { Product } from '../models/product';
   providedIn: 'root',
 })
 export class ProductService {
-  apiUrl: string = 'https://localhost:44348/api/'; //http://localhost:4200/api/products/getall
+  apiUrl: string = 'https://localhost:*****/api/'; //***** olan yere kendi port numaranızı yazınız
 
   constructor(private httpClient: HttpClient) {}
 
